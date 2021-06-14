@@ -17,6 +17,15 @@ console.log (almoço, "_" , boolean)
 console.log (jantou, "_" , boolean1)
 console.log (banho,"_" , boolean)*/
 
+let a = 10
+let b = 25
+let c = a 
+a=b
+b=c
+
+console.log("O novo valor de a é", a)
+console.log("O novo valor de b é", b)
+
 
 
 
