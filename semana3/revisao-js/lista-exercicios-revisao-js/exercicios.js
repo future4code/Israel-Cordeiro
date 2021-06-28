@@ -21,23 +21,22 @@ function retornaNumerosParesElevadosADois(array) {
 }
  
   
-  /*const numerosAoQuadrado = numerosPares **2;
-  const resultado = numerosPares * numerosAoQuadrado
-
-  return resultado
-}
-console.log (retornaNumerosParesElevadosADois)*/
-
 // EXERCÍCIO 03
 function retornaNumerosPares(array) {
-
+   arrayPares = []
+  for (num of array)
+    if (num % 2 === 0){
+      arrayPares.push(num)
+      console.log (arrayPares)
+    }
+    return arrayPares
 }
+
 
 // EXERCÍCIO 04
 function retornaMaiorNumero(array) {
 
 }
-
 // EXERCÍCIO 05
 function retornaQuantidadeElementos(array) {
   
