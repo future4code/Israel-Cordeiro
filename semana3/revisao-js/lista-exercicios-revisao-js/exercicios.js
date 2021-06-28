@@ -35,8 +35,9 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 04
 function retornaMaiorNumero(array) {
-
+ return Math.max(...array)
 }
+
 // EXERCÍCIO 05
 function retornaQuantidadeElementos(array) {
   
