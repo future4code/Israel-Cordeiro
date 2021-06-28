@@ -14,7 +14,10 @@ function inverteArray (array) {
 // EXERCÍCIO 02
 
 function retornaNumerosParesElevadosADois(array) {
-  
+  const numeroPar = array.filter ((num) => num %2 === 0)
+  const numeroParElevadoAoQuadrado = numeroPar.map ((num) => num **2)
+  return numeroParElevadoAoQuadrado
+
 }
  
   
