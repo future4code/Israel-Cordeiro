@@ -68,7 +68,16 @@ function checaTriangulo(a, b, c) {
   // return 'Escaleno'
   // return 'Equilátero'
   // return 'Isósceles'
+  if (a === b && a ===c && b === c){
+    return 'Equilátero'
+    }else if (a !== b && c !== a){
+      return 'Escaleno'
+    } else {
+      return 'Isósceles'
+    }
 }
+console. log (checaTriangulo(4,2,4))
+
 
 // EXERCÍCIO 09
 function comparaDoisNumeros(num1, num2) {
