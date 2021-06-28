@@ -76,7 +76,7 @@ function checaTriangulo(a, b, c) {
       return 'Isósceles'
     }
 }
-console. log (checaTriangulo(4,2,4))
+//console. log (checaTriangulo(4,2,4))
 
 
 // EXERCÍCIO 09
@@ -105,9 +105,28 @@ return {
 
 // EXERCÍCIO 10
 function segundoMaiorEMenor(array) {
+  /*let len = array.length
+  let = trocado
 
+  do{
+    trocado = false
+
+    for(let i=0; i < len; i++){
+      if (array[i] > array[i + 1]) {
+        let temp = array[i]
+        array[i] = array[i+1]
+        array[i+1]= temp
+        trocado = true
+      }
+    }
+  } while (trocado)
+
+  const segundoMaiorNumero = array[array.length -2]
+  const segundoMenorNumero = array[1]
+
+  return [segundoMaiorNumero, segundoMenorNumero]*/
 }
-
+console.log (segundoMaiorEMenor)
 // EXERCÍCIO 11
 function ordenaArray(array) {
 
