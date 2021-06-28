@@ -81,12 +81,26 @@ console. log (checaTriangulo(4,2,4))
 
 // EXERCÍCIO 09
 function comparaDoisNumeros(num1, num2) {
-  // Formato do objeto a ser retornado:
-  // {
-  //   maiorNumero: X,
-  //   maiorDivisivelPorMenor: Y,
-  //   diferenca: Z
-  // }
+  
+  let maiorNumero 
+  let menorNumero 
+
+  if (num1 > num2) {
+    maiorNumero = num1
+    menorNumero = num2
+} else {
+  maiorNumero = num2
+  menorNumero = num1
+}
+const maiorDivisivelPorMenor = maiorNumero % menorNumero === 0
+const diferenca = maiorNumero - menorNumero
+
+return {
+  maiorNumero: maiorNumero,
+  maiorDivisivelPorMenor: maiorDivisivelPorMenor,
+  diferenca: diferenca
+}
+
 }
 
 // EXERCÍCIO 10
