@@ -4,25 +4,33 @@
   *
   **/
 
-* {
+*{
     margin: 0;
     padding: 0;
+    font-family: "Roboto", sans-serif;
+  
 }
+
 
 h2 {
     background-color: #fe7e02;
-    padding: 10px 5px 10px 5px;
+    padding: 5px 5px 5px 5px;
     color: white;
     text-align: center;
 }
 
+
 input {
     height: 20px;
     width: 500px;
+    border: none;
+    outline: 0;
+    border-bottom: 1px solid black;
 }
 
 button:focus {
     color: white;
+    
 }
 
 img {
@@ -42,28 +50,45 @@ div>p:first-child {
     background-color: #ffaf43;
     width: 250px;
     height: 40px;
-    border-radius: 100px;
+    border-radius: 5px;
     font-size: 20px;
     color: white;
     display: inline-block;
+    border: none;
 }
 
-
+li{
+    display: list-item;
+    list-style-position: inside;
+    margin-left: 0px;
+   
+}
 
 .botao-amarelo:hover {
     background-color: #c44f00;
 }
 
 .container {
-    height: 500px;
+    height: 300px;
     text-align: center;
+    padding-bottom: 15px;
+   
 }
 
 .icone {
     height: 15px;
+    cursor: pointer;
+    width: 15px;
+}
+.icone:hover{
+    opacity:0.5;
 }
 
+.icone:active{
+    opacity:1;
+   
 
+}
 /** 
   *
   *  ESTILOS HOME 
@@ -82,19 +107,24 @@ div>p:first-child {
 
 #container-para-comprar {
     background-color: #e7eb90;
-    position: relative;
+    height: 400px;
 }
 
-#container-para-comprar>a{
+/*#container-para-comprar>a{
     position: absolute;
-    top: 70px;
+    top: 200px;
     right: 650px;
-}
+    size: 20px;
+    padding: 100px;
+    
+}*/
 
 #container-para-comprar>p {
     color: #c44f00;
-    padding: 100px 0;
+    padding: 100px;
     font-size: 60px;
+    display: block;
+   
 }
 
 
@@ -112,14 +142,22 @@ div:last-child {
 table {
     width: 60%;
     text-align: center;
+    margin: 0 auto;
+  
+}
+
+table td,button{
+   font-family: "Roboto", sans-serif;
+   font-size: 1.1em;
 }
 
 td button {
-    background-color: #fadf63;
+    background-color: #f5dd75;
     width: 150px;
     height: 30px;
     border-radius: 5px;
     color: black;
+    
 }
 
 .container-do-search {
@@ -132,7 +170,7 @@ td button {
     background-color: white;
     width: 100px;
     height: 20px;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 5px;
     font-size: 10px;
     color: black;
@@ -140,4 +178,17 @@ td button {
 
 #back-button:hover {
     background-color: #635a3d
+}
+.btn--comprar:active {
+    color: #fff;
+  }
+  
+.btn--comprar:hover {
+    background-color: #ad8e05;
+    color: white;
+    border-radius: 5px;
+  }
+.container-btn-voltar {
+    text-align: center;
+    margin-top: 100px;
 }
