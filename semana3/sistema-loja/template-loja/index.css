@@ -1,0 +1,100 @@
+h1{
+
+    color:rgb(255, 0, 157);
+    margin: 10px 70px 150px 400px;
+    padding-top : 80px;
+    padding-bottom: 20px; 
+    display:inline;
+   
+}
+
+p{
+    color:rgb(8, 2, 2);
+    background-color: rgb(201, 181, 201);
+    margin: 50px 500px 50px 300px;
+    padding-top: 15px;
+    padding-bottom: 6px;
+    padding-right: 100px;
+    padding-left: 100px;
+    
+}
+
+a {
+    color:rgb(255, 0, 157);
+    background-color: rgb(8, 2, 2);
+    display:inline-block;
+    margin: 30px 100px 50px 50px;
+    padding-top: 5px;
+    padding-bottom: 6px;
+    padding-right: 50px;
+    padding-left: 60px;
+}
+
+img {
+    height: 70px;
+    width: 70px;
+    padding-top: 15px;
+    padding-bottom: 6px;
+    padding-left: 40px;
+    padding-right: 30px;
+    background-color: rgb(255, 0, 157);
+    margin: 30px 250px 10px 100px;
+}
+
+li {
+    color:rgb(255, 0, 157);
+    background-color: rgb(8, 2, 2);
+    display: inline-block;
+    margin: 100;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+button{
+    background-color:rgb(255, 0, 157);
+    margin: 10px 10px 10px 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+label{
+    background-color: rgb(255, 0, 157);
+    margin: 10px 10px 10px 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+input{
+    background-color: rgb(8, 2, 2);
+    margin: 10px 10px 10px 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+td{
+    background-color: rgb(201, 181, 201);
+}
+
+body{
+    background-color: rgb(116, 236, 210);
+}
+
+footer{
+    background-color: rgb(255, 0, 157);
+}
+
+header{
+    background-color: rgb(8, 2, 2);
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
