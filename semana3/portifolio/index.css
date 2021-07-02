@@ -1,0 +1,29 @@
+img{
+    height: 250px;
+    padding-left: 40px;
+    padding-right: 30px;
+}
+
+body{
+    text-align: center;
+    background-image: url(./imagens/fundo2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1,h2,h3{
+    color: rgb(79, 203, 235);
+    font-size: 40px;
+    
+}
+p{
+    color: white;
+    font-size: 20px;
+}
+li{
+    color:white;
+}
+
+.botao-enviar{
+    padding-left: 45px;
+}
