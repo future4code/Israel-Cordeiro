@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+}
+
+.imagem-header{
+    height: 30px;
+   
+}
+
+#container-header{
+    display: flex;
+    background-color: mediumvioletred;
+    font-size: 15px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+  
+}
+
+img{
+    height: 15px;
+}
+
+#container-home{
+    background-color: #f2d0e0;
+    display: grid;
+    margin:0;
+   
+   
+  
+ 
+    
+    
+}
+
+footer{
+    background-color:mediumvioletred ;
+    margin:0;
+}
+
