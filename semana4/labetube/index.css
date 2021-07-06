@@ -1,0 +1,33 @@
+body{
+    margin:0;
+}
+
+.imagem-logo{
+    height: 20px;
+}
+
+#conteiner-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(245, 241, 235) ;
+  padding: 10px 15px;
+}
+
+.imagem-central{
+    height: 200px;
+    width: 300px;
+}
+
+#conteiner-imagem-central{
+    display:grid;
+    background-color: wheat;
+
+}
+
+footer{
+    display: flex;
+    background-color: rgb(245, 241, 235);
+    height: 40px;
+    justify-content: center;
+}
