@@ -1,0 +1,74 @@
+img{
+    height: 250px;
+    padding-left: 40px;
+    padding-right: 30px;
+}
+
+.body-index{
+    text-align: center;
+    background-image: url(./imagens/capa.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.body-projetos{
+    text-align: center;
+    background-image: url(./imagens/projetos.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.body-final{
+    text-align: center;
+    background-image: url(./imagens/redes-sociais-contato.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    color:rgb(4, 36, 95);
+    padding-top:20px;
+}
+
+h2,h3{
+    color: rgb(10, 78, 78);
+    font-size:40px;
+    padding-top:55px;  
+}
+
+p{
+    color: rgb(11, 192, 192);
+    font-size:20px;
+}
+
+li{
+    color:rgb(11, 192, 192);
+}
+
+.botao-enviar{
+    padding-left:40px;
+    background-color:rgb(11,192,192);
+     
+}
+
+.sociais{
+    height:80px;
+    padding-top:100px;
+}
+
+.campo-enviar{
+    background-color: rgb(11, 192, 192);
+}
+
+ul{
+    font-size:20px;
+    display:inline-block;
+    margin:0;
+    padding:0;
+}
+
+.menu{
+    color:rgb(10, 3, 3);
+    font-size:25px;
+    padding-top:10px;
+}
