@@ -48,3 +48,16 @@ footer{
     margin-top: 0;
     padding: 10px 15px;
 }
+
+video{
+    margin-left: 30px;
+    margin-top: 80px;
+    margin-right: 150px;
+}
+ .titulo-do-video{
+     display: flex;
+     margin-left: 380px;
+     margin-top:40px;
+     font-size: 30px;
+     
+ }
