@@ -1,0 +1,63 @@
+body{
+    margin:0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 60px 1fr 60px;
+    grid-template-columns: 300px 1fr;
+}
+
+.conteiner-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(245, 241, 235) ;
+  padding: 10px 15px;
+  grid-column: 1/-1;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 20px;
+    margin:20px;
+}
+
+.imagem-central{
+   width: 300px;
+   height: 200px;
+}
+
+.card-imagens-central{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 5px wheat;
+    text-align: center;
+    margin-left: 50px;
+}
+
+footer{
+    display: flex;
+    background-color: rgb(245, 241, 235);
+    height: 40px;
+    justify-content: center;
+    grid-column: 1/-1;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 10px 15px;
+}
+
+video{
+    margin-left: 30px;
+    margin-top: 80px;
+    margin-right: 150px;
+}
+ .titulo-do-video{
+     display: flex;
+     margin-left: 380px;
+     margin-top:40px;
+     font-size: 30px;
+     
+ }
