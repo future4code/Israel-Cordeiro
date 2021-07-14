@@ -52,23 +52,34 @@ class Post extends React.Component {
     const {curtido, numeroCurtidas} = this.state;
 
     this.setState({
+      curtido: !curtido
+    })
+
+    if (curtido){
+      this.setState({
+        numeroCurtidas: numeroCurtidas - 1
+      })
+    }else {
+      this.setState({
+        numeroCurtidas: numeroCurtidas + 1
+      })
+    }
+    /* this.setState({
       curtido: !curtido,
-      numeroCurtidas: curtido ? numeroCurtidas -1: numeroCurtidas +1,
-    })  
+      numeroCurtidas: curtido ? numeroCurtidas -1: numeroCurtidas +1, // ternario
+    })   */
   }
 
   onClickComentario = () => {
     this.setState({
-      comentando: true,
-      numeroComentarios: this.state.comentando + 1
+      comentando: !this.state.comentando,  
     })
-
   }
 
   aoEnviarComentario = () => {
     this.setState({
       comentando: false,
-      numeroComentarios: this.state.numeroComentarios + 1
+      numeroComentarios: this.state.numeroComentarios +1,
     })
 
   }
@@ -78,7 +89,7 @@ class Post extends React.Component {
 
     if(this.state.curtido) {
       iconeCurtida = iconeCoracaoPreto
-      
+
     } else {
       iconeCurtida = iconeCoracaoBranco
     }
