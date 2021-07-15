@@ -18,7 +18,7 @@ class App extends React.Component {
       <MainContainer>
         
         <Post
-          nomeUsuario={'paulinha'}
+          nomeUsuario={'paulinhaa'}
           fotoUsuario={'https://picsum.photos/50/50'}
           fotoPost={'https://picsum.photos/200/150'}
         />
