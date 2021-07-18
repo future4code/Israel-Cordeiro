@@ -1,15 +1,14 @@
 import React from 'react';
 //import styled from 'styled-components'
 //import Post from './components/Post/Post';
-import Imagem from "./imagem/flor.jpg"
+/* import Imagem from "./imagem/flor.jpg"
 import Perfil from "./imagem/perfil.jpg"
-import Feed from "./imagem/leao.jpeg"
+import Feed from "./imagem/leao.jpeg" */
+import styled from 'styled-components'
+import Post from "./components/Post/Post";
 
 
-
-  class App extends React.Component {
-    state = {
-      posts: [
+  const arrayPosts= [
         {
           nomeUsuario: 'Paulinha',
           fotoUsuario: 'https://picsum.photos/50/50',
@@ -17,70 +16,107 @@ import Feed from "./imagem/leao.jpeg"
         },
         {
           nomeUsuario: 'Israel',
-          fotoUsuario: {Perfil},
-          fotoPost: {Feed}
+          fotoUsuario: 'https://raw.githubusercontent.com/future4code/Israel-Cordeiro/master/semana3/portifolio/imagens/perfil%20atual.jpg',
+          fotoPost: 'https://picsum.photos/200/151'
         },
         {
           nomeUsuario:'Thais',
-          fotoUsuario:{Imagem},
-          fotoPost: {Imagem}
+          fotoUsuario: 'https://picsum.photos/50/52',
+          fotoPost: 'https://picsum.photos/200/152'
         }
-      ],
+  ]
 
-      valorInputNome: '',
-      valorInputFotoUsuario: '',
-      valorInputFotoPost: ''
-
-    }
-    render() {
-
-      const listaDePost = this.state.post.map ((post) => {
-        return(
-          <post
-          {...post.nomeUsuario}
-          {...post.fotoUsuario}
-          {...post.fotoPost}
-          />
-        )
-    })
+     
+      const AppContainer = styled.div`
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    `;
+    
+    const FormContainer = styled.div`
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 180px;
+      width: 240px;
+      border: 1px solid gray;
+      margin: 20px;
+      padding: 30px;
+    `;
+    
+    class App extends React.Component {
+      state = {
+        posts: arrayPosts,
+        userName: "",
+        userPhoto: "",
+        postPhoto: ""
+      };
 
 
     onChangeInputNome = (event) =>{
-      this.setState ({valorInputNome: event.target.value})
+      this.setState ({inputNome: event.target.value})
     }
 
     onChangeInputFotoUsuario = (event) =>{
-      this.setState ({valorInputFotoUsuario: event.target.value})
+      this.setState ({inputFotoUsuario: event.target.value})
     }
 
     onChangeInputFotoPost = (event) =>{
-      this.setState ({valorInputFotoPost: event.target.value})
+      this.setState ({inputFotoPost: event.target.value})
     }
 
+    addNewPost = () => {
+      const newPost = {
+        nomeUsuario: this.state.inputNome,
+        fotoUsuario: this.state.inputFotoUsuario,
+        fotoPost: this.state.inputFotoPost
+      };
+  
+      this.setState({
+        posts: [...this.state.posts, newPost],
+        userName: "",
+        userPhoto: "",
+        postPhoto: ""
+      });
+    };
+
+    render() {
+      const componentesPost = this.state.posts.map((p) => {
+        return (
+          <Post
+            nomeUsuario={p.nomeUsuario}
+            fotoUsuario={p.fotoUsuario}
+            fotoPost={p.fotoPost}
+          />
+        );
+      });
+
       return (
-        <div>
-           {listaDePost}
-            
+        <AppContainer>
+          <FormContainer>
             <input
-            value={this.state.valorInputNome}
-            onChange={this.onChangeInputNome}
-            placeholder= 'nome'
+              placeholder={"Nome do Usuário"}
+              value={this.state.userName}
+              onChange={this.changeUserName}
             />
+            <input
+              placeholder={"Foto do Usuário"}
+              value={this.state.userPhoto}
+              onChange={this.changeUserPhoto}
+            />
+            <input
+              placeholder={"Foto do Post"}
+              value={this.state.postPhoto}
+              onChange={this.changePostPhoto}
+            />
+            <button onClick={this.addNewPost}>Criar Post</button>
+          </FormContainer>
+          {componentesPost}
+        </AppContainer>
+      );
+    }
+  }
+   
 
-            <input
-            value={this.state.valorInputFotoUsuario}
-            onChange={this.onChangeInputFotoUsuario}
-            placeholder= 'Foto do Usuario'
-            />
-
-            <input
-            value={this.state.valorInputFotoPost}
-            onChange={this.onChangeInputFotoPost}
-            placeholder='Foto do Post'
-            />
-        </div>
-          
-      )
-   }
-}
   export default App;
