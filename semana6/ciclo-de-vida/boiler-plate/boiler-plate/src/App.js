@@ -54,6 +54,20 @@ class App extends React.Component {
   }
 
   selectTarefa = (id) => {
+    const novasTarefas = this.state.tarefas.map((tarefa) => {
+      if(id === tarefa.id){
+        const tarefaNova = {
+          ...tarefa,
+          tarefas: !tarefa.tarefas
+        }
+        return tarefaNova
+      }else{
+        return tarefa 
+      }
+
+    })
+
+    this.setState({tarefas : novasTarefas})
 
   }
 
