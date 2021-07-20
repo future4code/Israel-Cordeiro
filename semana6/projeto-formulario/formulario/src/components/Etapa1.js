@@ -1,5 +1,7 @@
 //import './App.css';
-import React from 'react'
+import React from 'react';
+
+
 
 class Etapa1 extends React.Component {
     render(){

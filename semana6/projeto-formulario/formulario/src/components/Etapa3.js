@@ -1,5 +1,6 @@
 //import './App.css';
-import React from 'react'
+import React from 'react';
+
 
 class Etapa3 extends React.Component {
     render(){
@@ -18,11 +19,6 @@ class Etapa3 extends React.Component {
                         <option value='Curso de Inglês'>Curso de Inglês</option>
                     </select>
                 </div>    
-
-                
-                
-                
-                
             </div>
         );
     }
