@@ -5,6 +5,14 @@ import Etapa1 from './components/Etapa1';
 import Etapa2 from './components/Etapa2';
 import Etapa3 from './components/Etapa3';
 import Final from './components/Final'
+import styled from 'styled-components'
+
+const ContainerButton = styled.div`
+ margin-left: 900px; 
+margin-top: 35px;
+
+
+` 
 
 
 let valor = 1;
@@ -36,7 +44,11 @@ let valor = 1;
     return (
       <div> 
         {this.renderizarEtapa()} 
+        <ContainerButton>
+        {this.state.etapa !== 4 && (
         <button onClick={this.irParaProximaEtapa}> Próxima Etapa</button>
+        )}
+        </ContainerButton>
       </div>
     )
  }

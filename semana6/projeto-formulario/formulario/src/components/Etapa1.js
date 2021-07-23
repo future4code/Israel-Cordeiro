@@ -1,24 +1,27 @@
 //import './App.css';
 import React from 'react';
+import styled from 'styled-components';
+import PerguntaAberta from './PerguntaAberta'
+
+
+const ContainerLista = styled.div`
+text-align: center;
+margin-top: 100px;
+font-size: 35px;
+
+` 
 
 
 
 class Etapa1 extends React.Component {
     render(){
         return (
-            <div> 
+            <ContainerLista> 
                 <h2>ETAPA 1- DADOS GERAIS</h2>
                 <div>
-                   <p> 1. Qual seu nome? </p>
-                   <input value></input>
-                </div>
-                <div>
-                  <p> 2. Qual sua idade ?</p>
-                  <input value></input>
-                </div>
-                <div>
-                  <p> 3. Qual seu e-mail?</p>
-                  <input value></input>
+                <PerguntaAberta pergunta={"1. Qual o seu nome?"} />
+                <PerguntaAberta pergunta={"2. Qual sua idade?"} />
+                <PerguntaAberta pergunta={"3. Qual seu email?"} />
                 </div>
                 <div>
                   <p>4. Qual sua escolaridade?</p>
@@ -29,7 +32,7 @@ class Etapa1 extends React.Component {
                         <option value='Ensino Superior Completo'>Ensino Superior Completo</option>
                   </select>
                 </div>
-            </div>
+            </ContainerLista>
         );
     }
 }

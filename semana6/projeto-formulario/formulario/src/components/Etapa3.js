@@ -1,15 +1,25 @@
-//import './App.css';
+
 import React from 'react';
+import styled from 'styled-components'
+import PerguntaAberta from './PerguntaAberta'
+
+const ContainerLista = styled.div`
+text-align: center;
+margin-top: 100px;
+font-size: 35px;
+
+` 
+
 
 
 class Etapa3 extends React.Component {
     render(){
         return (
-            <div>
+            <ContainerLista>
                 <h2>ETAPA 3 - INFORMAÇÕES GERAIS DE ENSINO</h2>
                 <div>
-                    <p>5. Por que você não terminou um curso de graduação? </p>
-                    <input value></input>
+                <PerguntaAberta
+                pergunta={"5. Por que você não terminou um curso de graduação?"}/>
                 </div>
                 <div>
                     <p> 6. Você fez algum curso complementar? </p>
@@ -19,7 +29,7 @@ class Etapa3 extends React.Component {
                         <option value='Curso de Inglês'>Curso de Inglês</option>
                     </select>
                 </div>    
-            </div>
+            </ContainerLista>
         );
     }
 }
