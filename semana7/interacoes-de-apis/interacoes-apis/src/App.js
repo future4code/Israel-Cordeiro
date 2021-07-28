@@ -1,30 +1,41 @@
 
 import React from 'react';
-import ListaUsuarios from './components/ListaUsuarios/index';
-import TelaCadastros from './components/TelaCadastro/index'
-
+import ListaUsuarios from './components/ListaUsuarios.js';
+import TelaCadastro from './components/TelaCadastro.js'
 
 
 
 export default class App extends React.Component {
   state = {
-    tela: 'cadastro'
+    telaAtual: "cadastro"
   }
 
   mudancaDeTela = () => {
-    this.setState ({
-      tela: this.state.tela === "cadastro" ? "usuario" : "cadastro",
-    })
+    switch (this.state.telaAtual){
+      case "cadastro":
+        return <TelaCadastro irParaListaUsuarios={this.irParaListaUsuarios} />
+        case "lista":
+          return <ListaUsuarios irParaTelaCadastro={this.irParaTelaCadastro} />
+          default:
+            return <di>Erro! Página não encontrada :( </di>
+    }
   }
 
-  render() {
+  irParaTelaCadastro = () =>{
+    this.setState({telaAtual: "cadastro"})
+
+  }
+
+  irParaListaUsuarios = () =>{
+    this.setState({telaAtual: "lista"})
+
+  }
+
+
+  render(){
       return (
         <div>
-            <button onClick ={this.mudancaDeTela}>
-            Ir para a página de {""}
-            {this.state.tela === "cadastro" ? "usuarios": "cadastro"}
-          </button>
-             {this.state.tela === "cadastro" ? <TelaCadastros /> : <ListaUsuarios />}
+          {this.mudancaDeTela()}
         </div>
       )
    }
