@@ -4,14 +4,48 @@ import styled from 'styled-components'
 
 
 const CardUsuario = styled.div`
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
-    width: 300px;
+    border: 3px solid pink;
+    color: black;
+    font-size: 15px;
     display: flex;
     justify-content: space-between;
+    text-align: center;
+    width: 350px;
+    margin-top: 40px;
+    background-color: lightgray;
+    padding: 1em 3px 30px 5px;
+  
+  
 
 ` 
+
+   const CardBotao = styled.div`
+    border: 5px solid pink;
+    text-align: center;
+    width: 400px;
+    height: 800px;
+    margin-top: 30px;
+    margin-left: 700px ;
+    background-color: grey;
+    padding: 1em 3px 30px 5px;
+    overflow:auto;
+
+
+    >button{
+        height: 70px;
+        width: 200px;
+        margin: 10px;
+        border: 5px solid pink;
+        &:hover {
+            cursor: pointer;
+        }
+   }
+   
+   >h2{
+        color: pink;
+        margin-top: 50px;
+   }
+   ` 
 
 export default class ListaUsuarios extends React.Component {
     state ={
@@ -60,16 +94,16 @@ export default class ListaUsuarios extends React.Component {
             return (
             <CardUsuario key={user.id}>
                 {user.name}
-                <button onClick={() => this.deletarUsuario(user.id)}>X</button> 
+                <button onClick={() => this.deletarUsuario(user.id)}>delete</button> 
             </CardUsuario>)
         })
         
         return(
-            <div>
+            <CardBotao>
                 <button onClick={this.props.irParaTelaCadastro}> Ir para Cadastro</button>
                 <h2>Lista Usuários</h2>
                 {listaUsuarios}
-            </div>
+            </CardBotao>
 
         )
     }

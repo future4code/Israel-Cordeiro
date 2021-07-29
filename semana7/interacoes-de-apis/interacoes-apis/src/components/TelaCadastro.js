@@ -1,5 +1,37 @@
 import React from 'react'
 import axios from 'axios'
+import styled from 'styled-components'
+
+const Container = styled.div`
+    border: 5px solid pink;
+    padding: 10px;
+    width: 400px;
+    height:800px;
+    display: grid;
+    margin-left: 700px;
+    margin-top: 50px ; 
+    text-align: center;
+    background-color: grey;
+
+    > button {
+        margin: 10px;
+        border: 5px solid pink;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    >h2 {
+        color: pink;
+        margin-top: 50px;
+    }
+
+    >input{
+        margin: 10px;
+        font-size: 15px;
+        border: 5px solid pink;
+    }
+` 
 
 
 
@@ -40,7 +72,7 @@ export default class TelaCadastro extends React.Component {
  
     render(){
         return (
-            <div>
+            <Container>
               <button onClick={this.props.irParaListaUsuarios}>Ir para Lista de Usuários</button>
               <h2>Cadastro</h2>
               <input 
@@ -54,7 +86,7 @@ export default class TelaCadastro extends React.Component {
               onChange={this.handleEmail}
               />
               <button onClick={this.fazerCadastro}>Cadastrar</button>
-            </div>
+            </Container>
         )
     }
 }
