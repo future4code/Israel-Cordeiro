@@ -6,21 +6,28 @@ const Container = styled.div`
   border: 1px solid black;
     background-color: red;
     display: grid;
-    width: 300px;
-    height: 400px;
+    width: 400px;
+    height: 500px;
     text-align: center;
-    margin-top: 50px;
-    margin-left: 150px;
+    margin-top: 100px;
+    margin-left: 600px;
 
     >select{
-      background-color: green;
+      background-color: lightgreen;
     }
 
     >img{
       background-color: white;
-      display: flex;
-      justify-content: center;
+      margin-left: 100px;
+      margin-top: 20px;
+      width: 200px;
+      height: 150px;
     }
+
+    >h1{
+      color: lightsteelblue;
+    }
+
 
 ` 
 
