@@ -1,43 +1,89 @@
 import React from 'react';
-import CriarPlaylist from './components/CriarPlaylist.js';
-import ListaPlaylist from './components/ListaPlaylist.js'
+import Header from './components/Header/index.js';
+import styled from 'styled-components'
+import GerenciadorPlaylist from './components/GerenciadorPlaylist/index.js';
+import PaginaFormularioPlaylist from './components/PaginaFormularioPlaylist/index.js';
+
+
+const AppContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background: pink;
+  display: flex;
+  flex-direction: column;
+ 
+
+` 
 
 
 
 
 export default class App extends React.Component  {
   state = {
-    telaAtual: "criarPlaylist"
+    paginaAtual: "paginaformularioPlaylist"
   }
 
-  mudancaDeTela = () => {
-    switch (this.state.telaAtual){
-      case "criarPlaylist":
-        return <CriarPlaylist irParaListaPlaylist={this.irParaListaPlaylist} />
-        case "listaPlaylist":
-          return <ListaPlaylist irParaCriarPlaylist={this.irParaCriarPlaylist} />
-          default:
-            return <di>Erro! Página não encontrada :( </di>
-    }
-  }
-
-  irParaCriarPlaylist = () =>{
-    this.setState({telaAtual: "criarPlaylist"})
-
-  }
-
-  irParaListaPlaylist = () =>{
-    this.setState({telaAtual: "listaPlaylist"})
-
+  mudaPagina = (paginaAtual) => {
+    this.setState({paginaAtual: paginaAtual })
   }
 
 
   render(){
-      return (
-        <div>
-          {this.mudancaDeTela()}
-        </div>
-      )
-   }
+    const paginaAtual = () =>{
+      if (this.state.paginaAtual === "paginaformularioPlaylist"){
+        return <PaginaFormularioPlaylist />
+      }else if (this.state.paginaAtual === "gerenciadorPlaylist"){
+        return <GerenciadorPlaylist />
+      }
+
+    }
+
+    return(
+      <AppContainer>
+        <Header 
+          mudaPagina={this.mudaPagina}
+        />
+        {paginaAtual()}
+      </AppContainer>
+
+
+    )
+  }
+
 }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
