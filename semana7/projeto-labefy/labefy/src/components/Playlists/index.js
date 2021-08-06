@@ -24,11 +24,19 @@ const PlaylistContainer = styled.div`
 
       buscaPlaylists = () =>{
           axios.get(baseURL,axiosConfig).then(response =>{
-              console.log(response)
               this.setState({playlists: response.data.result.list})
           }).catch(err =>{
               console.log(err)
           })
+      }
+
+      deletarPlaylist = (playlistId) =>{
+          axios.delete(`${baseURL}/${playlistId}`, axiosConfig).then(response =>{
+              this.buscaPlaylists()
+          }).catch(err =>{
+              console.log(err)
+          })
+
       }
 
       render(){
@@ -37,6 +45,8 @@ const PlaylistContainer = styled.div`
                key={playlist.id}
                mudaPagina={this.props.mudaPagina}
                name={playlist.name}
+               playlistId={playlist.id}
+               deletarPlaylist={this.deletarPlaylist}
                />
           })
         

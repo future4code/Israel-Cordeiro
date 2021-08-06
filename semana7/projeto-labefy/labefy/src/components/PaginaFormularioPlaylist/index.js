@@ -36,11 +36,12 @@ const PlaylistCreatForm = styled.form`
               name: this.state.inputNameValue
           }
 
-          axios.post(baseURL, body, axiosConfig).then(response =>{
-              console.log(response)
+          axios.post(baseURL, body, axiosConfig).then(() =>{
+              alert("Playlist cadastrada com sucesso")
           }).catch(err =>{
               console.log(err)
           })
+          this.setState({inputNameValue: ""})
       }
 
 

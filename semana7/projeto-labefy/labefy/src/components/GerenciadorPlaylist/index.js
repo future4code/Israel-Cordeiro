@@ -13,12 +13,17 @@ const PlaylistManagerPageContainer = styled.div`
 
   class GerenciadorPlaylist extends React.Component{
       state={
-          paginaAtual: "playlists"
+          paginaAtual: "playlists",
+          playlistId:""
 
       }
 
-      mudaPagina = (paginaAtual) => {
-        this.setState({paginaAtual: paginaAtual })
+      mudaPagina = (paginaAtual, playlistId) => {
+        this.setState({
+            paginaAtual: paginaAtual,
+            playlistId: playlistId
+        
+        })
       }
 
       render(){
