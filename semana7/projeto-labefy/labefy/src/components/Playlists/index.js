@@ -1,6 +1,8 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import axios from 'axios'
 import PlaylistCard from '../PlaylistCard';
+import { axiosConfig, baseURL } from '../../constantes';
 
 
 const PlaylistContainer = styled.div`
@@ -11,33 +13,22 @@ const PlaylistContainer = styled.div`
 
 ` 
 
-
-
   class Playlists extends React.Component{
       state={
-          playlists: [
-            
-                {
-                    "id": "37adb2e1-0dde-4310-a8e6-60f98c890780",
-                    "name": "modernas"
-                },
-                {
-                    "id": "4a874cf5-9bcd-4200-9c2a-3ca94daac871",
-                    "name": "rock"
-                },
-                {
-                    "id": "6426c1eb-d7e4-4624-8eb6-2af7afd01508",
-                    "name": "alternativa"
-                },
-                {
-                    "id": "62bcbdc2-473d-4a03-ad56-0841f06baeaf",
-                    "name": "gays"
-                },
-                {
-                    "id": "f94bafe8-8513-4525-a4d1-f00919396637",
-                    "name": "mpb"
-                }
-          ]
+          playlists: []
+      }
+
+      componentDidMount= () =>{
+          this.buscaPlaylists()
+      }
+
+      buscaPlaylists = () =>{
+          axios.get(baseURL,axiosConfig).then(response =>{
+              console.log(response)
+              this.setState({playlists: response.data.result.list})
+          }).catch(err =>{
+              console.log(err)
+          })
       }
 
       render(){
