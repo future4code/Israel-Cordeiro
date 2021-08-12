@@ -1,5 +1,6 @@
-import styled from 'styled-components'
-import React,{useState, useEffect} from 'react'
+import styled from 'styled-components';
+import CardProfile from './CardProfile';
+
 
 
 const ContainerCard = styled.div`
@@ -23,7 +24,7 @@ const ContainerHeader = styled.div`
   
 ` 
 
-const TelaInicial = (props) =>{
+function TelaInicial(props) {
 
 
     return(
@@ -36,13 +37,7 @@ const TelaInicial = (props) =>{
                         <button onClick={() => props.trocaTela('matchs')}>Ir para Matchs</button>
                     </div>
                 </ContainerHeader>
-                <div>
-                    {/* {dados()} */}
-                </div>
-                <div>
-                    <button>s2</button>
-                    <button>X</button>
-                </div>
+              <CardProfile />
             </ContainerCard>
     )
 }

@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import React,{useState, useEffect} from 'react'
-import axios from 'axios'
+import styled from 'styled-components';
+import React,{useState, useEffect} from 'react';
+import axios from 'axios';
 
 
 const ContainerList = styled.div`
@@ -20,39 +20,7 @@ const HeaderContainer = styled.div`
     margin-top: 0;
 
 `
-
-
-const TelaMatchs = (props) => {
-    const [matchs, setMatchs] = useState([])
-    const [limparTela, setLimparTela] = useState('')
-
-    const listaMatchs = () =>{
-        axios
-        .get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/matches')
-        .then( response =>{
-            setMatchs(response.data.results)
-        })
-        .catch(err =>{
-            console.log(err)
-        })
-    }
-
-    const limparMatchs = () =>{
-        axios
-        .put('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/clear')
-        .then( response => {
-            setLimparTela(response.data.results)
-        })
-        .catch(err =>{
-            console.log(err)
-        })
-
-    }
-
-    // useEffect(() => {
-    //     listaMatchs(props.pessoa);
-    //    }, [props.pessoa])
-
+function TelaMatchs (props){
 
     return(
         <ContainerList>
