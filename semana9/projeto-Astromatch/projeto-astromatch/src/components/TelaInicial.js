@@ -10,7 +10,7 @@ const ContainerCard = styled.div`
     justify-content: center;
     border: 1px solid black;
     margin-left: 350px;
-    background-color: lightsalmon;
+    background-color: lightpink;
 
 ` 
 
@@ -23,8 +23,15 @@ const ContainerHeader = styled.div`
    
   
 ` 
+const ContainerButton = styled.div`
+    display:flex;
+    justify-content: space-between;
+    
+
+` 
 
 function TelaInicial(props) {
+
 
 
     return(
@@ -38,7 +45,10 @@ function TelaInicial(props) {
                     </div>
                 </ContainerHeader>
               <CardProfile />
+              <ContainerButton>
+              </ContainerButton>
             </ContainerCard>
+          
     )
 }
 

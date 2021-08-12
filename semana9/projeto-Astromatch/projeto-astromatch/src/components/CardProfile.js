@@ -3,8 +3,13 @@ import React,{useState, useEffect} from 'react';
 import axios from 'axios';
 import { baseURL } from '../constants';
 
-const ContainerImage = styled.div`
-    width: 70px;
+const ContainerCard = styled.div`
+
+` 
+
+
+const ContainerImage = styled.img`
+    
 
 ` 
 
@@ -28,11 +33,37 @@ function CardProfile  () {
         pegaPerfil()
     }, [])
 
+    
+    const escolhePessoa = (choice) =>{
+        const body = {
+            id:pessoa.id,
+            choice:choice, 
+        }
+
+        axios
+        .post(`${baseURL}/choose-person`, body)
+        .then((response) =>{
+            pegaPerfil()
+        })
+        .catch((err) =>{
+            console.log(err)
+        })
+    }
+
+    const likePerson = () =>{
+        escolhePessoa(true)
+    }
+
+    const deslikePerson = () =>{
+        escolhePessoa(false)
+    }
+
+
     return(
-        <div>
-            <ContainerImage>
-                <img src={pessoa.photo} alt='Imagem Usuario' />
-            </ContainerImage>
+        <ContainerCard>
+            <div>
+                <img className={ContainerImage} width='70px' src={pessoa.photo} alt='Imagem Usuario' />
+            </div>
             <div>
                 {pessoa.name}
                 {pessoa.age}
@@ -40,7 +71,11 @@ function CardProfile  () {
             <div>
                 {pessoa.bio}
             </div>
-        </div>
+            <div>
+                <button onClick={likePerson}>s2</button>
+                <button onClick={deslikePerson}>X</button>
+            </div>
+        </ContainerCard>
     )
     
     
