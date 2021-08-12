@@ -23,13 +23,13 @@ const HeaderContainer = styled.div`
 
 `
 function TelaMatchs (props){
-    const [lista, setLista] = useState({})
+    const [lista, setLista] = useState([])
 
     const pegaLista = () =>{
         axios
         .get(`${baseURL}/matches`)
         .then((response) =>{
-            /* console.log(response.data.matches) */
+             console.log(response.data.matches) 
             setLista(response.data.matches)
         })
         .catch((err) =>{
@@ -40,12 +40,21 @@ function TelaMatchs (props){
         pegaLista()
     }, [])
     
-    console.log(lista)
+
+    const apagaPerfil = () =>{
+        axios
+        .put(`${baseURL}/clear`)
+        .then((response) => { 
+            pegaLista()
+            alert ('Usuarios deletados com Sucesso!!')
+        })
+        .catch((err) =>{
+            console.log(err)
+        })
+    }
 
     return(
         <ContainerList>
-          
-
             <HeaderContainer>
                 <div>
                     <h1>AstroMatch</h1>
@@ -54,11 +63,16 @@ function TelaMatchs (props){
                     <button onClick={() => props.trocaTela('inicial')}>Voltar Tela Inicial</button>
                 </div>
             </HeaderContainer>
+            {lista.map((item) => {
+                return (
+                    <div>
+                        <img width='70px' src={item.photo} />
+                        {item.name}
+                    </div>
+                )
+            })}
             <div>
-          
-            </div>
-            <div>
-                <button>delete</button>
+                <button onClick={apagaPerfil}>delete</button>
             </div>
         </ContainerList>
 

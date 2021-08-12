@@ -2,13 +2,17 @@ import styled from 'styled-components';
 import React,{useState, useEffect} from 'react';
 import axios from 'axios';
 import { baseURL } from '../constants';
+import Coracao from '../Image/heart.png'
+import Excluir from '../Image/excluir.png'
 
 const ContainerCard = styled.div`
 
 ` 
 
-
-const ContainerImage = styled.img`
+const ContainerButton = styled.div`
+    display:flex;
+    justify-content: space-between;
+    background: none;
     
 
 ` 
@@ -62,7 +66,7 @@ function CardProfile  () {
     return(
         <ContainerCard>
             <div>
-                <img className={ContainerImage} width='70px' src={pessoa.photo} alt='Imagem Usuario' />
+                <img width='70px' src={pessoa.photo} alt='Imagem Usuario' />
             </div>
             <div>
                 {pessoa.name}
@@ -71,10 +75,10 @@ function CardProfile  () {
             <div>
                 {pessoa.bio}
             </div>
-            <div>
-                <button onClick={likePerson}>s2</button>
-                <button onClick={deslikePerson}>X</button>
-            </div>
+            <ContainerButton>
+                <button onClick={likePerson}><img src ={Coracao} /></button>
+                <button onClick={deslikePerson}><img src ={Excluir} /></button>
+            </ContainerButton>
         </ContainerCard>
     )
     
