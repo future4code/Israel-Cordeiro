@@ -5,17 +5,72 @@ import { baseURL } from '../constants';
 import Coracao from '../Image/heart.png'
 import Excluir from '../Image/excluir.png'
 
-const ContainerCard = styled.div`
-
-` 
 
 const ContainerButton = styled.div`
     display:flex;
     justify-content: space-between;
     background: none;
+    margin-top: 10px;
     
-
+    button{
+        cursor:pointer;
+        border: none;
+        background-color: whitesmoke;
+    }
+    
 ` 
+
+const ContainerImage = styled.div`
+      height: 500px;
+      position: relative;
+      width: 350px;
+      overflow: hidden;
+      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+` 
+
+const BaseImage = styled.img`
+  width: 100%;
+  height: 100%;
+`;
+
+const ImageBlur = styled(BaseImage)`
+  filter: blur(10px);
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
+const Image = styled(BaseImage)`
+  object-fit: contain;
+  object-position: center;
+  position: relative;
+  z-index: 1;
+`
+
+const TextContainer = styled.div`
+  height: 30%;
+  position: absolute;
+  bottom: 0px;
+  width: 95%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 15px;
+  z-index: 2;
+`
+
+const NameAge = styled.p`
+  font-weight: bold;
+  font-size: 24px;
+`
+
+const Bio = styled.p`
+  margin-top: 5px;
+`
 
 
 function CardProfile  () {
@@ -64,22 +119,20 @@ function CardProfile  () {
 
 
     return(
-        <ContainerCard>
-            <div>
-                <img width='70px' src={pessoa.photo} alt='Imagem Usuario' />
-            </div>
-            <div>
-                {pessoa.name}
-                {pessoa.age}
-            </div>
-            <div>
-                {pessoa.bio}
-            </div>
+        <div>
+            <ContainerImage>
+                <Image  src={pessoa.photo} alt='Imagem Usuario' />
+                <ImageBlur src={pessoa.photo} />
+            <TextContainer>
+                <NameAge> {pessoa.name}, {pessoa.age} </NameAge>
+                <Bio> {pessoa.bio} </Bio>
+            </TextContainer>
+            </ContainerImage>
             <ContainerButton>
-                <button onClick={likePerson}><img src ={Coracao} /></button>
                 <button onClick={deslikePerson}><img src ={Excluir} /></button>
+                <button onClick={likePerson}><img src ={Coracao} /></button>
             </ContainerButton>
-        </ContainerCard>
+        </div>
     )
     
     

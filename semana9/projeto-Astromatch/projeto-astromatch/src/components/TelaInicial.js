@@ -5,12 +5,20 @@ import CardProfile from './CardProfile';
 
 const ContainerCard = styled.div`
     display: flex;
-    width: 500px;
+    width: 600px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     border: 1px solid black;
+    background-color: whitesmoke;
     margin-left: 350px;
-    background-color: lightgrey;
+    min-height: 600px;
+    max-width: 400px;
+    width: 100%;
+    padding: 10px 20px;
+    align-items: center;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin-top: 10px;
 
 ` 
 
@@ -24,6 +32,22 @@ const ContainerHeader = styled.div`
   
 ` 
 
+const ContainerBtton = styled.div`
+    margin-left: 75px;
+
+    button{
+        border-radius: 20px;
+        cursor: pointer;
+        transition-duration: 0.4s;
+    }
+
+    button:hover {
+    background-color: #A9A9A9; 
+    color: white;
+}
+
+` 
+
 
 function TelaInicial(props) {
 
@@ -35,9 +59,9 @@ function TelaInicial(props) {
                     <div>
                         <h1>AstroMatch</h1>
                     </div>
-                    <div>
+                    <ContainerBtton>
                         <button onClick={() => props.trocaTela('matchs')}>Ir para Matchs</button>
-                    </div>
+                    </ContainerBtton>
                 </ContainerHeader>
               <CardProfile />
             </ContainerCard>

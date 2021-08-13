@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react';
+import React,{useState} from 'react';
 import TelaMatchs from './components/TelaMatchs';
 import TelaInicial from './components/TelaInicial';
 

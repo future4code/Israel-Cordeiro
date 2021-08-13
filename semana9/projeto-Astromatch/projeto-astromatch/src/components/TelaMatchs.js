@@ -5,13 +5,18 @@ import { baseURL } from '../constants';
 
 
 const ContainerList = styled.div`
-    display: flex;
-    width: 500px;
-    flex-direction: column;
-    justify-content: center;
-    border: 1px solid black;
-    margin-left: 350px;
-    background-color: lightpink
+  min-height: 600px;
+  max-width: 400px;
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  justify-content: flex-start;
+  border-radius: 20px;
+  border: 1px solid black;
+  margin-left: 350px;
+  margin-top: 10px;
 
 ` 
 const HeaderContainer = styled.div`
@@ -22,6 +27,65 @@ const HeaderContainer = styled.div`
     margin-top: 0;
 
 `
+
+const ContainerMatchs = styled.div`
+    box-shadow: 1px 1px 1px 1px ;
+    margin-top: 20px;
+    border-radius: 20px;
+  
+   
+   img{
+       width:40px;
+       height:40px;
+       border-radius:100px;
+       margin-top:8px;
+       margin-left:10px;
+   }
+
+`
+
+const ButtonContainer = styled.div`
+    margin-top: 30px;
+    margin-left: 180px;
+    size: 100px;
+
+    button{
+
+        cursor:pointer;
+        border-radius: 20px;
+        background-color: lightgray;
+        border: 2px solid black;
+        transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #FF0000; /* red*/
+    color: white;
+}
+       
+
+` 
+
+const ButtonHeader = styled.div`
+    
+    button{
+        border-radius: 20px;
+        cursor: pointer;
+        transition-duration: 0.4s;
+        
+    }
+
+    button:hover {
+    background-color: #A9A9A9; 
+    color: white;
+}
+
+` 
+
+
+
+
+
 function TelaMatchs (props){
     const [lista, setLista] = useState([])
 
@@ -59,21 +123,21 @@ function TelaMatchs (props){
                 <div>
                     <h1>AstroMatch</h1>
                 </div>
-                <div>
-                    <button onClick={() => props.trocaTela('inicial')}>Voltar Tela Inicial</button>
-                </div>
+                <ButtonHeader>
+                    <button onClick={() => props.trocaTela('inicial')}>Voltar para Tela Inicial</button>
+                </ButtonHeader>
             </HeaderContainer>
             {lista.map((item) => {
                 return (
-                    <div>
-                        <img width='70px' src={item.photo} />
-                        {item.name}
-                    </div>
+                    <ContainerMatchs>
+                        <img  src={item.photo}  key={lista.id} />
+                         {item.name}
+                    </ContainerMatchs>
                 )
             })}
-            <div>
-                <button onClick={apagaPerfil}>delete</button>
-            </div>
+            <ButtonContainer>
+                <button onClick={apagaPerfil}>Deletar Matchs</button>
+            </ButtonContainer>
         </ContainerList>
 
     )
