@@ -83,9 +83,6 @@ const ButtonHeader = styled.div`
 ` 
 
 
-
-
-
 function TelaMatchs (props){
     const [lista, setLista] = useState([])
 
