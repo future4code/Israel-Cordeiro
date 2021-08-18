@@ -10,11 +10,12 @@ const ContainerListTrips = styled.div`
     margin-left: 400px;
 ` 
 
-const ContainerLista = styled.div`
-
+const ContainerCardTrip = styled.div`
+    border: 1px solid black;
+    width: 500px;
 ` 
 
-export const  ListTripsPage = (props) => {
+export const  ListTripsPage = () => {
     const [lista, setLista] = useState([])
     const history = useHistory()
 
@@ -29,20 +30,32 @@ export const  ListTripsPage = (props) => {
       const pegaLista = () => {
         axios.get(`${baseURL}/trips`)
         .then((response) =>{
-            setLista(response.data)
-            console.log('lista viagens', response.data)
+            setLista(response.data.trips)
+            // console.log('lista viagens', response.data.trips)
         })
          .catch((err) =>{
              console.log(err)
          })
           
-         console.log(lista)
     }
+
+    console.log(lista)
 
     useEffect(() =>{
         pegaLista()
     }, [])
 
+    const retornaLista = lista.map((item) =>{
+        return(
+            <ContainerCardTrip>
+                <p key={item.id}><b>{item.name.toUpperCase()}</b></p>
+                <p>Pra onde? <b>{item.planet}</b></p>
+                <p>{item.description}</p>
+                <p> Quando ? <b>{item.date}</b></p>
+                <p>Duração: <b>{item.durationInDays}</b></p>
+            </ContainerCardTrip>
+        )
+    })
 
     return(
         <ContainerListTrips>
@@ -54,12 +67,10 @@ export const  ListTripsPage = (props) => {
                     inscrever-se
                 </button>
             </div>
-            <div>
+           <div>
             <h1> Lista de Viagens </h1>
             </div>
-             <div>
-                {lista.name}
-             </div>
+            {retornaLista}
         </ContainerListTrips>
 
     )

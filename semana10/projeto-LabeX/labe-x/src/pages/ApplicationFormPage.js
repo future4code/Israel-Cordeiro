@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
+import {useState, useEffect} from 'react';
+import axios from 'axios';
+import { baseURL } from '../constantes';
 
 
 const ContainerForm = styled.div`
@@ -10,10 +13,26 @@ const ContainerForm = styled.div`
 
 export const  ApplicationFormPage = () => {
     const history = useHistory()
+    const [formulario, setFormulario] = useState("")
 
     const voltarListaViagem = () =>{
         history.push('/trips/list')
     }
+
+    const PegaFormulario = () =>{
+        axios.post(`${baseURL}/trips/:id/apply`)
+        .then((response) =>{
+            setFormulario(response.data)
+            console.log(response.data)
+        })
+        .catch((err) =>{
+            console.log(err)
+        })
+    }
+
+    useEffect(() =>{
+        PegaFormulario()
+    }, [])
 
     return(
         <ContainerForm>
