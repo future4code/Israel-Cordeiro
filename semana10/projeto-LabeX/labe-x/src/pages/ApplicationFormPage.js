@@ -29,7 +29,7 @@ export const  ApplicationFormPage = () => {
             console.log(err)
         })
     }
-
+        console.log(formulario)
     useEffect(() =>{
         PegaFormulario()
     }, [])
