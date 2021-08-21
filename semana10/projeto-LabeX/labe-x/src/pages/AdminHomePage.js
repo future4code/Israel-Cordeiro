@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useEffect, useState} from 'react';
 import axios from 'axios';
 import { baseURL } from '../constantes/index';
@@ -18,7 +18,9 @@ const ContainerPageAdm = styled.div`
 
  export const  AdminHomePage = () => {
      const history = useHistory()
-     const [lista, setLista] = useState([])
+     const [lista, setLista] = useState([{id: []}])
+     const params = useParams()
+     const idTrips = params.id
 
      const voltarParaHomePage = () => {
          history.push('/')
@@ -40,7 +42,7 @@ const ContainerPageAdm = styled.div`
         axios.get(`${baseURL}/trips`)
         .then((response) =>{
             setLista(response.data.trips)
-            // console.log('lista viagens', response.data.trips)
+             console.log('lista viagens', response.data.trips)
         })
          .catch((err) =>{
              console.log(err)
@@ -48,19 +50,25 @@ const ContainerPageAdm = styled.div`
           
     }
 
-    console.log(lista)
+    const deletar = (idTrips, setLista) =>{
+        const token = localStorage.getItem('token')
+        axios.delete(`${baseURL}/trips/${idTrips}`, {
+            headers:{
+                auth:token
+            }
+        })
+        .then((response) =>{
+            setLista()
+            alert('Viagem deletada com sucesso!!')
+        })
+        .catch((err) =>{
+            console.log(err)
+        })
+    }
 
     useEffect(() =>{
         pegaLista()
     }, [])
-
-    const retornaLista = lista.map((item) =>{
-        return(
-            <ContainerCardAdm>
-                <p onClick={() => irParaTelaDetalhesViagem(item.id)} key={item.id}><b>{item.name}</b></p>
-            </ContainerCardAdm>
-        )
-    })
 
     return(
         <ContainerPageAdm>
@@ -75,7 +83,14 @@ const ContainerPageAdm = styled.div`
                 <button onClick={voltarTelaLogin}>
                     logout
                 </button>
-                {retornaLista} 
+                {lista.map((item) => {
+                    return (
+                        <ContainerCardAdm>
+                            <p onClick={() => irParaTelaDetalhesViagem(item.id)} key={item.id}><b>{item.name}</b></p>
+                            <button onClick={() => deletar(item.id, setLista)}>deletar</button>
+                        </ContainerCardAdm>
+                    )
+                })}
             </div>
         </ContainerPageAdm>
 

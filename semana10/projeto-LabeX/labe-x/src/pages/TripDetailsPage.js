@@ -76,7 +76,7 @@ const ContainerCardCandidates = styled.div`
 
         useEffect(() =>{
             aprovar(idCandidates)
-        }, [])
+        }, [trips])
 
         const renderizaDetalhes = () =>{
             return(
@@ -123,10 +123,7 @@ const ContainerCardCandidates = styled.div`
                 </div>
                 )
             }  
-        
-        
-
-        
+  
 
     return(
         <div>
