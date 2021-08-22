@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
-import { useState } from 'react'
+import { useEffect } from 'react'
 import axios from 'axios';
 import { baseURL } from '../constantes';
 import useForm from '../hooks/useForm';
@@ -11,11 +11,35 @@ const ContainerLogin = styled.div`
     margin-top: 250px;
     margin-left: 400px;
 
+    input{
+       width: 250px;
+       border-radius: 5px;
+       margin-top: 5px;
+    }
+
+    button{
+       width: 70px;
+       margin-left: 40px;
+       margin-top: 10px;
+       border-radius:5px;
+       cursor: pointer;
+    }
+
 ` 
 
 export const  LoginPage = () => {
     const history = useHistory()
     const { form, onChange, limpaFiltros } = useForm ({ email:'', password:''})
+
+    useEffect(() =>{
+        const token = localStorage.getItem('token')
+
+        if(token === null){
+            alert ('não está logado!!!')
+            history.push('/login')
+        }
+
+     }, [])
     
     const voltarPaginaHome = () =>{
         history.push('/')
@@ -76,11 +100,8 @@ export const  LoginPage = () => {
                <button onClick={voltarPaginaHome}>
                     voltar
                </button>
-               <button>
-                    enviar loggin
-               </button>
                <button onClick={entrarPaginaAdmin}>
-                    entrar pagina ADM
+                    entrar
                </button>
                 </div>
            </form>

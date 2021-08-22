@@ -7,9 +7,33 @@ import useForm from '../hooks/useForm';
 
 
 const ContainerCreatTripPage = styled.div`
-    margin-top: 250px;
+    margin-top: 150px;
     margin-left: 400px;
+
+    select{
+       width: 260px;
+       border-radius: 5px;
+       margin-top: 5px;
+      
+   }
+
+   input{
+       width: 250px;
+       border-radius: 5px;
+       margin-top: 5px;
+       
+   }
+
+   button{
+       width: 70px;
+       margin-left: 40px;
+       margin-top: 10px;
+       border-radius:5px;
+       cursor: pointer;
+   }
 ` 
+
+
 
 export const CreateTripPage = () => {
     const history = useHistory()
@@ -27,6 +51,7 @@ export const CreateTripPage = () => {
     const criarViagem = (event) =>{
         event.preventDefault()
           console.log('formulario enviado:', form)
+          alert ('Viagem Criada com sucesso!!')
 
        
         axios.post(`${baseURL}/trips`,form, {

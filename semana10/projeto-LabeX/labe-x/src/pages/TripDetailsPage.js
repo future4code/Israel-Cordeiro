@@ -4,10 +4,35 @@ import axios from 'axios';
 import { baseURL } from '../constantes';
 import styled from 'styled-components';
 
+const ContainerDetails = styled.div`
+    text-align: center;
+
+    button{
+        border-radius: 5px;
+        width: 80px;
+        cursor: pointer;
+
+    }
+
+` 
+
 const ContainerCardCandidates = styled.div`
     border: 1px solid black;
     width: 500px;
+    margin-left: 370px;
+    border-radius: 5px;
 
+    button{
+        margin-left: 15px;
+        border-radius: 5px;
+        width: 80px;
+        cursor: pointer;
+    }
+
+` 
+
+const ContainerTitle = styled.div`
+    text-align: center;
 ` 
 
 
@@ -23,15 +48,7 @@ const ContainerCardCandidates = styled.div`
          history.push('/admin/trips/list')
      }
 
-     useEffect(() =>{
-        const token = localStorage.getItem('token')
-
-        if(token === null){
-            console.log('não está logado!!!')
-            history.push('/login')
-        }
-
-     }, [])
+    
 
          const detalhes = (id) => {
          const token = localStorage.getItem('token')
@@ -80,7 +97,7 @@ const ContainerCardCandidates = styled.div`
 
         const renderizaDetalhes = () =>{
             return(
-                <div>
+                <ContainerDetails>
                     <p>{trips.name}</p>
                     <p>{trips.description}</p>
                     <p>{trips.planet}</p>
@@ -120,16 +137,16 @@ const ContainerCardCandidates = styled.div`
 
                              )
                          })}  
-                </div>
+                </ContainerDetails>
                 )
             }  
   
 
     return(
-        <div>
+        <ContainerTitle>
             <h1>Detalhes Viagens</h1>
             {renderizaDetalhes()}
-        </div>
+        </ContainerTitle>
     )
 }
 

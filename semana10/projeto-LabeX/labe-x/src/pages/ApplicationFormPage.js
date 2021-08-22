@@ -8,8 +8,35 @@ import useForm from '../hooks/useForm';
 
 
 const ContainerForm = styled.div`
-    margin-top: 250px;
+    margin-top: 150px;
     margin-left: 400px;
+   
+` 
+
+const ContainerButtons = styled.div`
+   
+   select{
+       width: 260px;
+       border-radius: 5px;
+       margin-top: 5px;
+       margin-bottom: 5px;
+   }
+
+   input{
+       width: 250px;
+       border-radius: 5px;
+       margin-top: 5px;
+       
+   }
+
+   button{
+      width: 70px;
+       margin-left: 40px;
+       margin-top: 10px;
+       border-radius:5px;
+       cursor: pointer;
+   }
+
 ` 
 
 export const  ApplicationFormPage = () => {
@@ -97,6 +124,7 @@ export const  ApplicationFormPage = () => {
         <ContainerForm>
             <h1>Inscreva-se para uma Viagem</h1>
             <form onSubmit={pegaFormulario}>
+          <ContainerButtons>
             <div>
                 < select 
                 defaultValue={''}
@@ -171,6 +199,7 @@ export const  ApplicationFormPage = () => {
                     enviar 
                 </button>
             </div>
+          </ContainerButtons>  
             </form>
         </ContainerForm>
 

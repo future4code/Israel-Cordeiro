@@ -5,11 +5,19 @@ import { useHistory } from 'react-router-dom'
 
 const ContainerHome = styled.div`
     margin-top: 250px;
-    margin-left: 400px;
+    text-align: center;
 
 `
 const ContainerButton = styled.div`
   
+      button{
+        border-radius:5px;
+       cursor: pointer;
+       margin-left: 15px;
+       width: 120px;
+
+
+      } 
 
 ` 
 

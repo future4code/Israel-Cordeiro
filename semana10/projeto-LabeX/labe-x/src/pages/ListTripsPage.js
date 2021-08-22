@@ -6,13 +6,24 @@ import { useHistory } from 'react-router-dom';
 
 
 const ContainerListTrips = styled.div`
-    margin-top: 250px;
+    margin-top: 80px;
     margin-left: 400px;
+
+
+    button{
+       border-radius:5px;
+       cursor: pointer;
+       margin-left: 15px;
+       width: 120px;
+    }
 ` 
 
 const ContainerCardTrip = styled.div`
     border: 1px solid black;
-    width: 500px;
+    width: 600px;
+    margin-top: 8px;
+    border-radius:10px;
+
 ` 
 
 export const  ListTripsPage = () => {
@@ -45,17 +56,7 @@ export const  ListTripsPage = () => {
         pegaLista()
     }, [])
 
-    const retornaLista = lista.map((item) =>{
-        return(
-            <ContainerCardTrip>
-                <p key={item.id}><b>{item.name.toUpperCase()}</b></p>
-                <p>Pra onde? <b>{item.planet}</b></p>
-                <p>{item.description}</p>
-                <p> Quando ? <b>{item.date}</b></p>
-                <p>Duração: <b>{item.durationInDays}</b></p>
-            </ContainerCardTrip>
-        )
-    })
+
 
     return(
         <ContainerListTrips>
@@ -70,7 +71,18 @@ export const  ListTripsPage = () => {
            <div>
             <h1> Lista de Viagens </h1>
             </div>
-            {retornaLista}
+            {lista.map((item) =>{
+        return(
+            <ContainerCardTrip>
+                <p key={item.id}><b>{item.name.toUpperCase()}</b></p>
+                <p><b>Planeta: {item.planet}</b></p>
+                <p><b> Descrição: {item.description}</b></p>
+                <p><b> Data: {item.date}</b></p>
+                <p><b>Duração:{item.durationInDays}</b></p>
+            </ContainerCardTrip>
+        )
+    })}
+          
         </ContainerListTrips>
 
     )

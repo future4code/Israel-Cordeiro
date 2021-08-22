@@ -5,15 +5,45 @@ import { useEffect, useState} from 'react';
 import axios from 'axios';
 import { baseURL } from '../constantes/index';
 
+
+const ContainerPageAdm = styled.div`
+    margin-top: 80px;
+    margin-left: 400px;
+ 
+` 
+
 const ContainerCardAdm = styled.div` 
     border: 1px solid black;
-    width: 500px;
+    width: 400px;
+    margin-top: 20px;
+    border-radius: 5px;
+
+    button{
+        border-radius: 5px;
+        cursor: pointer;
+        transition-duration: 0.4s;
+        margin-bottom: 10px;
+    }
+
+
+    button:hover {
+        background-color: #FF0000; /* red*/
+        color: white;
+}
 
 `
 
-const ContainerPageAdm = styled.div`
-    margin-top: 250px;
-    margin-left: 400px;
+
+const ContainerButton = styled.div`
+  
+  button{
+      margin-left: 20px;
+      width: 100px;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+
+
 ` 
 
  export const  AdminHomePage = () => {
@@ -58,13 +88,23 @@ const ContainerPageAdm = styled.div`
             }
         })
         .then((response) =>{
-            setLista()
+            setLista(response)
             alert('Viagem deletada com sucesso!!')
         })
         .catch((err) =>{
             console.log(err)
         })
     }
+
+     const renderizaLista = lista.map((item) => {
+        return (
+            <ContainerCardAdm>
+                <p onClick={() => irParaTelaDetalhesViagem(item.id)} key={item.id}><b>{item.name}</b></p>
+                <button onClick={() => deletar(item.id, setLista)}>deletar</button>
+            </ContainerCardAdm>
+        )
+    })
+
 
     useEffect(() =>{
         pegaLista()
@@ -74,6 +114,7 @@ const ContainerPageAdm = styled.div`
         <ContainerPageAdm>
             <h1>Painel Administrativo</h1>
             <div>
+                <ContainerButton>
                 <button onClick={voltarParaHomePage}>
                     voltar
                 </button>
@@ -83,14 +124,16 @@ const ContainerPageAdm = styled.div`
                 <button onClick={voltarTelaLogin}>
                     logout
                 </button>
-                {lista.map((item) => {
+                </ContainerButton>
+                {renderizaLista}
+                {/* {lista.map((item) => {
                     return (
                         <ContainerCardAdm>
                             <p onClick={() => irParaTelaDetalhesViagem(item.id)} key={item.id}><b>{item.name}</b></p>
                             <button onClick={() => deletar(item.id, setLista)}>deletar</button>
                         </ContainerCardAdm>
                     )
-                })}
+                })} */}
             </div>
         </ContainerPageAdm>
 
