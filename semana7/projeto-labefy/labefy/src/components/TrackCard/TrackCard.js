@@ -38,10 +38,10 @@ const DeleteButton = styled.p`
             <div>
                <TrackContainer>{props.musicaNome} - </TrackContainer>
                <ArtistContainer>{props.artista}</ArtistContainer>
-                <DeleteButton>X</DeleteButton>
+                <DeleteButton onClick={() => props.deletarFaixas(props.trackId)}>X</DeleteButton>
             </div>
             <audio controls="controls"/>
-                <source src={props.url} type="audio/ogg" />
+                <source src={props.url} type="audio.ogg" />
 
             </TrackCardContainer>
        )

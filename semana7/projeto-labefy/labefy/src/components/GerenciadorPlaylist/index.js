@@ -35,6 +35,7 @@ const PlaylistManagerPageContainer = styled.div`
                 }else if(this.state.paginaAtual === "detalhePlaylist"){
                     return  <DetalhePlaylist 
                     mudaPagina={this.mudaPagina}
+                    playlistId={this.state.playlistId}
                     />
                 } 
             }
