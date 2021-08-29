@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 
 const TrackCardContainer = styled.div`
-    margin: 20px;
-    margin-bottom: 40px;
+ 
+    margin-top: 100px;
     display:flex;
     align-items: center;
     flex-direction: column;

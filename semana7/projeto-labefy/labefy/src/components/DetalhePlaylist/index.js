@@ -9,19 +9,45 @@ const DetalhePlaylistContainer = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
+    overflow:auto;
+
+    button{
+        cursor:pointer;
+        border-radius:5px;
+        background-color: #EEE5DE;
+        color:#A0522D;
+        margin-top:90px;
+
+    }
 
 
 ` 
 const FormularioCriarMusica = styled.form`
-    display:flex;
+    display:grid;
     width: 100vw;
     height: 100px;
     align-items: center;
     justify-content: space-around;
+    margin-top:5px;
+   
+
+    button{
+        cursor:pointer;
+        border-radius:5px;
+        background-color: #EEE5DE;
+        color:#A0522D;
+        margin-top:5px;
+
+    }
 
     div{
         display: flex;
         flex-direction:column;
+    }
+
+    input{
+        border-radius:5px;
+        margin:5px;
     }
 
 

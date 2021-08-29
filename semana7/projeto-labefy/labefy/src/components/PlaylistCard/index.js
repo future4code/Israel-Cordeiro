@@ -7,6 +7,13 @@ const PlaylistCardContainer = styled.div`
     display:flex;
     align-items: center;
 
+    button{
+        cursor:pointer;
+        border-radius:5px;
+        background-color: #EEE5DE;
+        color:#A0522D;
+    }
+
 
 ` 
 const NameContainer = styled.p`
@@ -15,6 +22,7 @@ const NameContainer = styled.p`
 ` 
 const DeleteButton = styled.p`
     color: red;
+    border-radius: 5px;
 
 `  
 

@@ -3,11 +3,16 @@ import styled from 'styled-components'
 
 
 const HeaderContainer = styled.div`
-height: 100px;
 display: flex;
 align-items: center;
 justify-content: space-around;
-border-bottom-style: solid;
+border: 2px solid black;
+width: 500px;
+height: 100px;
+border-radius: 20px;
+margin-left:350px;
+margin-top:20px;
+background-image: linear-gradient(to right, #FFDAB9, #E6E6FA, #F0FFFF); 
 
 ` 
 
@@ -15,6 +20,13 @@ const ButtonsContainer = styled.div`
     width: 300px;
     display:flex;
     justify-content: space-around;
+
+    button{
+        cursor:pointer;
+        border-radius:5px;
+        background-color: #EEE5DE;
+        color:#A0522D;
+    }
 
 ` 
 
