@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function PaginaCadastro() {
+const PaginaCadastro = () => {
     return(
         <div>
            <h1>Pagina Cadastro</h1>

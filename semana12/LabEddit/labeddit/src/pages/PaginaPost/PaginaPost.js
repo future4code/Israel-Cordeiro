@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-function PaginaPost() {
+const PaginaPost = () => {
     return(
         <div>
           <h1>Pagina Post</h1>

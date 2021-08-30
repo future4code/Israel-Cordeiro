@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function PaginaErro() {
+const ErrorPage = () => {
     return(
         <div>
           <h1>Pagina Erro</h1>
@@ -9,4 +9,4 @@ function PaginaErro() {
     )
 }
 
-export default PaginaErro;
+export default ErrorPage;
