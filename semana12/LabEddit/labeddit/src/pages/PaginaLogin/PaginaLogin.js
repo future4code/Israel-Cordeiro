@@ -1,32 +1,34 @@
 import React from 'react';
-//import Button from '@material-ui/core/Button'
-import {ScreenContainer, InputsContainer} from './styles';
-import TextField from '@material-ui/core/TextField';
-import useForm from '../../hooks/useForm';
+// import Button from '@material-ui/core/Button';
+import {ScreenContainer, SignUpButtonContainer} from './styles';
+import { Button } from '@material-ui/core';
+import { vaiParaCadastro } from '../../routes/coordinator';
+import { useHistory } from 'react-router';
+import PaginaFormularioLogin from './PaginaFormularioLogin';
+import useUnprotectedPage from '../../hooks/useUnprotectedPage';
+
 
 
 
 const PaginaLogin = () => {
-    const [form, onChange, clear] = useForm({email, password})
-    
-    const onSubmitForm = () =>{
-
-    }
+    const history = useHistory()
+    useUnprotectedPage()
 
     return(
         <ScreenContainer>
            <h1>Pagina Login</h1>
-           <InputsContainer>
-                <form onSubmit={onSubmitForm}>
-                    <TextField 
-                        name={'email'}
-                        value={}
-                        onChange={}
-                    />
-
-                </form>
-           
-           </InputsContainer>
+           <PaginaFormularioLogin />
+            <SignUpButtonContainer>
+                   <Button
+                    onClick={() => vaiParaCadastro(history)}
+                    fullWidth
+                    variant={'text'}
+                    color={'neutralColor'}
+                    type={'submit'}
+                    >
+                    Não possui conta ? Cadastre-se!!
+                    </Button>
+            </SignUpButtonContainer>
         </ScreenContainer>
     )
 }
