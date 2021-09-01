@@ -1,11 +1,15 @@
 import React from 'react';
+import error from '../../img/error.png';
+import Typography from '@material-ui/core/Typography';
+import {ErrorImage, ErrorPageContainer} from './styles'
 
 
 const ErrorPage = () => {
     return(
-        <div>
-          <h1>Pagina Erro</h1>
-       </div>
+        <ErrorPageContainer>
+          <ErrorImage src={error}/>
+          <Typography color={'primary'} variant={'h4'} align={'center'}></Typography>
+       </ErrorPageContainer>
     )
 }
 

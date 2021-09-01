@@ -9,13 +9,13 @@ import { useHistory } from 'react-router';
 
 
 
-const PaginaFormularioLogin = () => {
+const PaginaFormularioLogin = ({ setRightButtonText}) => {
     const [form, onChange, clear] = useForm({email: '', password: ''})
     const history = useHistory()
     
     const onSubmitForm = (event) =>{
         event.preventDefault()
-        login(form, clear, history)
+        login(form, clear, history, setRightButtonText)
 
     }
 

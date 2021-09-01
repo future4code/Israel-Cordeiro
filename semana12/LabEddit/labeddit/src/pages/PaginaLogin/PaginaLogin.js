@@ -10,14 +10,14 @@ import useUnprotectedPage from '../../hooks/useUnprotectedPage';
 
 
 
-const PaginaLogin = () => {
+const PaginaLogin = ({ setRightButtonText }) => {
     const history = useHistory()
     useUnprotectedPage()
 
     return(
         <ScreenContainer>
            <h1>Pagina Login</h1>
-           <PaginaFormularioLogin />
+           <PaginaFormularioLogin  setRightButtonText={setRightButtonText}/>
             <SignUpButtonContainer>
                    <Button
                     onClick={() => vaiParaCadastro(history)}

@@ -9,13 +9,13 @@ import { useHistory } from 'react-router';
 
 
 
-const PaginaFormularioCadastro = () => {
+const PaginaFormularioCadastro = ({ setRightButtonText }) => {
     const [form, onChange, clear] = useForm({username: '', email: '', password: ''})
     const history = useHistory()
     
     const onSubmitForm = (event) =>{
         event.preventDefault()
-        registration(form,clear,history)
+        registration(form,clear,history,setRightButtonText)
 
     }
 
@@ -55,7 +55,7 @@ const PaginaFormularioCadastro = () => {
                         fullWidth
                         margin={'normal'}
                         required
-                        type={'senha'}
+                        type={'password'}
                     />
 
                     <Button
