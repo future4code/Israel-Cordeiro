@@ -8,7 +8,7 @@ export const PostContainer = styled.div`
     align-items: center;
     border:10px;
     border: 1px solid black;
-    height: 120px;
+    height: 200px;
     width: 300px;
     margin-top:10px;
     margin-left: 450px;
@@ -18,11 +18,16 @@ export const Title = styled.div`
     text-align: center;
     
 ` 
-export const AddPostButton = styled(Fab)`
-    position: fixed !important;
-    right: 20px;
-    bottom:20px;
-    z-index: 3;
+export const ContainerFormularioFeed = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    width: 300px;
+    border: 1px solid black;
+    margin-left: 450px;
+    text-align: center;
+    margin-top: 10px;
 
-   ` 
+`
 

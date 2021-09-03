@@ -18,10 +18,7 @@ export const vaiParaPost = (history,id) =>{
 
 }
 
-export const vaiParaAddPost = (history) =>{
-    history.push('/add/post')
 
-}
 
 
 

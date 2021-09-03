@@ -4,7 +4,7 @@ import PaginaFeed from '../pages/PaginaFeed/PaginaFeed';
 import PaginaLogin from '../pages/PaginaLogin/PaginaLogin';
 import PaginaPost from '../pages/PaginaPost/PaginaPost';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
-import PaginaAddPost from '../pages/PaginaAddPost/PaginaAddPost'
+
 
 
 const Router = ({ setRightButtonText }) => {
@@ -21,10 +21,6 @@ const Router = ({ setRightButtonText }) => {
 
                 <Route exact path='/feed'>
                     <PaginaFeed />
-                </Route>
-
-                <Route exact path='/add/post'>
-                    <PaginaAddPost />
                 </Route>
 
                 <Route exact path='/post/:id'>
