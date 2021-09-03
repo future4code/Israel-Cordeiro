@@ -3,6 +3,9 @@ import { useParams } from 'react-router';
 import { BASE_URL } from '../../constants/urlsAndAutorizations';
 import useProtectedPage from '../../hooks/useProtectedPage';
 import useRequestData from '../../hooks/useRequestData';
+import baixo from '../../img/baixo.jpg';
+import cima from '../../img/cima.jpg';
+import PaginaPostFormulario from './PaginaPostFormulario';
 
 
 
@@ -18,15 +21,15 @@ const PaginaPost = () => {
                 <p>{item.username}</p>
                 <div>
                     <img 
-                    //  src={}
-                    //  alt={}
-                    //  onClick={}
+                     src={cima}
+                     alt={'Seta para sima'}
+                     onClick={''}
                     />
                     {item.userVote}
                     <img 
-                    //  src={}
-                    //  alt={}
-                    //  onClick={}
+                     src={baixo}
+                     alt={'Seta para baixo'}
+                     onClick={''}
                     />
                 </div>
 
@@ -38,6 +41,8 @@ const PaginaPost = () => {
     return(
         <div>
           <h1>Pagina Post</h1>
+          <p>{showComments}</p>
+          <PaginaPostFormulario />
        </div>
     )
 }
