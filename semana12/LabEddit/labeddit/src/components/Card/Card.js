@@ -7,10 +7,9 @@ import { PostContainer} from './styles';
 import { useHistory } from 'react-router';
 
 
- 
+
 
 const Card = () =>{
-
  const history = useHistory()
  const posts = useRequestData([], `${BASE_URL}/posts`)
  console.log(posts)
@@ -33,7 +32,6 @@ const postsCards = posts.map((post) =>{
                 </PostContainer>
            )
    })
-
 
    return postsCards;
 }

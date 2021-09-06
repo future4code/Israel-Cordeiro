@@ -7,7 +7,7 @@ export const headers = {
     headers:{
     'Content-Type': 'application/json',
 
-    Authorization : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY4NDU0ZDk0LTIxMjQtNDJhZS04MDJlLWQxZWMwOWQ4YjBjNSIsInJvbGUiOiJHVUVTVCIsImlhdCI6MTYzMDY4MTU0NywiZXhwIjoxNjMwNzI0NzQ3fQ.ClNC1CQrJEuEZ_HQp-QWmUFwzTQXE4ajJXSA3oi3KQw'
+    Authorization : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY4NDU0ZDk0LTIxMjQtNDJhZS04MDJlLWQxZWMwOWQ4YjBjNSIsInJvbGUiOiJHVUVTVCIsImlhdCI6MTYzMDg2OTk0MiwiZXhwIjoxNjMwOTEzMTQyfQ.3BlWSavrl-T9KFjrQGtJMWc8VAJ806UD3SNCrsMh-qY'
+
     }
 }
-
