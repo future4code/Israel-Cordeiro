@@ -65,7 +65,7 @@ const PlaylistCreatForm = styled.form`
        render(){
         return(
             <PLaylistCreatFormContainer>
-                <h1>Cadastrar Nova Playlist</h1>
+                <h1>Nova Playlist</h1>
                 <PlaylistCreatForm onSubmit={this.creatPlaylist}>
                  <label> Nova Playlist</label>
                  <input 

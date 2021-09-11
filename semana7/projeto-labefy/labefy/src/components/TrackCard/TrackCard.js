@@ -40,12 +40,12 @@ const DeleteButton = styled.p`
                <ArtistContainer>{props.artista}</ArtistContainer>
                 <DeleteButton onClick={() => props.deletarFaixas(props.trackId)}>X</DeleteButton>
             </div>
-            <audio controls="controls"/>
-                <source src={props.url} type="audio.ogg" />
-
+            <audio controls><source src={props.url} type="audio/mpeg"/></audio>
             </TrackCardContainer>
        )
    }
 
 
 export default TrackCard
+
+{/* <audio controls><source src={track.url} type="audio/mpeg" /></audio> */}
