@@ -41,7 +41,7 @@ export default async function createUser(
         .send('Usuário criado com Sucesso!!')
 
 
-    }catch (error){
+    }catch (error:any){
          res.status(400).send({
             message: error.message || error.sqlMessage
         })
