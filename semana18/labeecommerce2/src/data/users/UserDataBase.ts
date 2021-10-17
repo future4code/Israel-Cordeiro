@@ -1,8 +1,7 @@
-import { getAllUsers } from '../../endpoints/users/getAllUsers';
 import { User } from './../../entities/User';
 import { BaseDataBase } from "../BaseDataBase";
 
-export class userDataBase extends BaseDataBase{
+export class UserDataBase extends BaseDataBase{
 
     private static tableName = "labecommerce_user"
     
@@ -15,24 +14,24 @@ export class userDataBase extends BaseDataBase{
     )
 
      createUser = (user: User) => BaseDataBase
-     .connection(userDataBase.tableName)
-     .insert(User)
+     .connection(UserDataBase.tableName)
+     .insert(user)
 
      // método de verificação 
      getUserByEmail = async (email:string) =>{
          const [result] = await BaseDataBase
-         .connection(userDataBase.tableName)
-         .where({email})
-         
+         .connection(UserDataBase.tableName)
+         .where({ email })
+     
         //  console.log(result)
         //  return result
 
         if (result) return this.toUser(result)
      }
 
-     getAllUsers = async () =>{
+     getAllUsers = async () => {
          const result = await BaseDataBase
-         .connection(userDataBase.tableName)
+         .connection(UserDataBase.tableName)
 
         return result.map(this.toUser)
      }

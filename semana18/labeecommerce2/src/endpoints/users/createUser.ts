@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { BaseDataBase } from '../../data/BaseDataBase';
-import { userDataBase } from '../../data/users/UserDataBase';
+import { UserDataBase } from '../../data/users/UserDataBase';
 import { User } from '../../entities/User';
 import { IdGenerator } from '../../services/IdGenerator';
 
@@ -9,7 +9,7 @@ export const createUser = async (req: Request, res:Response) =>{
     try{
         const {name, email, age} = req.body
         const id = new IdGenerator().execute()
-        const database = new userDataBase()
+        const database = new UserDataBase()
 
         const newUser = new User(
             id,

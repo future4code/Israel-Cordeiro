@@ -1,11 +1,12 @@
 import { Request, Response } from 'express';
-import { userDataBase } from '../../data/users/UserDataBase';
+import { UserDataBase } from '../../data/users/UserDataBase';
+
 
 
 export const getAllUsers = async (req:Request, res:Response) => {
     
     try{
-        const database = new userDataBase()
+        const database = new UserDataBase()
 
         const users = await database.getAllUsers()
 

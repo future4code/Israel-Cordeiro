@@ -1,5 +1,5 @@
-import { getAllProducts } from './../../endpoints/products/getAllProducts';
-import { createProduct } from './../../endpoints/products/createProduct';
+// import { getAllProducts } from './../../endpoints/products/getAllProducts';
+// import { createProduct } from './../../endpoints/products/createProduct';
 import { BaseDataBase } from "../BaseDataBase";
 import { Product } from '../../entities/Product';
 import { Ticket } from '../../entities/Ticket';
