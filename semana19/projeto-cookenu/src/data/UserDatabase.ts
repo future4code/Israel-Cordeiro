@@ -29,4 +29,17 @@ export class UserDatabase extends BaseDatabase{
             throw new Error(err.sqlMessage || err.message)
         }
     }
+
+    public async getInformationUsers(id:string): Promise<any>{
+        try{
+            const [information] = await BaseDatabase.connection("cookenu_user")
+            .select('id','name','email')
+            .where({ id})
+            return information
+
+        }catch(err:any){
+            throw new Error(err.sqlMessage || err.message)
+        }
+         
+    }
 }
