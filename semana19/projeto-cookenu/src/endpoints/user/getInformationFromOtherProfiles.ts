@@ -1,9 +1,9 @@
-import { UserDatabase } from './../data/UserDatabase';
+import { UserDatabase } from '../../data/UserDatabase';
 import {Request, Response} from 'express';
-import { Authenticator } from '../services/Authenticator';
+import { Authenticator } from '../../services/Authenticator';
 
 
-export async function getInformations(
+export async function getInformationFromOtherProfiles(
     req: Request,
     res:Response
 ){
@@ -17,10 +17,11 @@ export async function getInformations(
         const authenticator = new Authenticator
         const tokenData = authenticator.getTokenData(token)
 
-        const userDatabase = new UserDatabase
-        const users = await userDatabase.getInformationUsers(tokenData.id)
+        const userId = req.params.id
 
-    
+        const userDatabase = new UserDatabase
+        const users = await userDatabase.getInformationUsers(userId)
+
         res.status(200).send(users)
 
     }catch(err:any){

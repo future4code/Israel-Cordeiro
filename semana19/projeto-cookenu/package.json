@@ -6,6 +6,7 @@
   "scripts": {
     "start": "tsc && node --inspect ./build/index.js",
     "dev-start": "ts-node-dev --ignore-watch node_modules --transpile-only ./src/index.ts",
+    "migrations": "tsc && node ./build/migrations.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

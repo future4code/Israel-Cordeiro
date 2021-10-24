@@ -1,9 +1,9 @@
-import { UserDatabase } from './../data/UserDatabase';
-import { IdGenerator } from './../services/IdGenerator';
+import { UserDatabase } from '../../data/UserDatabase';
+import { IdGenerator } from '../../services/IdGenerator';
 import {Request, Response} from 'express';
-import { HashManager } from '../services/HashManager';
-import { User } from '../entities/User';
-import { Authenticator } from '../services/Authenticator';
+import { HashManager } from '../../services/HashManager';
+import { User } from '../../entities/User';
+import { Authenticator } from '../../services/Authenticator';
 
 export async function signup(
     req:Request,
@@ -11,14 +11,20 @@ export async function signup(
 
 ){
     try{
-        const {name,email,password,role} = req.body
+        const {name,email,password} = req.body
 
-        if( !name || !email || !password || !role ){
+        if( !name || !email || !password ){
             res.status(422)
             .send(
-                'Insira corretamente as informações "name", "email", "password" e "role".'
+                'Insira corretamente as informações "name", "email" e "password".'
                 )
         }
+
+        if (password.length < 6){
+            res.status(422)
+            throw new Error('Password precisa ter no minimo 6 caracteres')
+        }
+        
         const userDatabase = new UserDatabase()
         const user = await userDatabase.findUserByEmail(email)
 
@@ -32,11 +38,11 @@ export async function signup(
         const hashManager = new HashManager()
         const hashPassword = await hashManager.hash(password)
 
-        const newUser = new User(id,name,email,hashPassword,role)
+        const newUser = new User(id,name,email,hashPassword)
         await userDatabase.createUser(newUser)
 
         const authenticator = new Authenticator()
-        const token = authenticator.generate({id, role})
+        const token = authenticator.generate({ id })
 
         res.status(200).send({message:'Usuário Criado com Sucesso!!', token})
 

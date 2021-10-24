@@ -1,7 +1,7 @@
-import { UserDatabase } from './../data/UserDatabase';
+import { UserDatabase } from '../../data/UserDatabase';
 import {Request, Response} from 'express';
-import { HashManager } from '../services/HashManager';
-import { Authenticator } from '../services/Authenticator';
+import { HashManager } from '../../services/HashManager';
+import { Authenticator } from '../../services/Authenticator';
 
 export async function login(
     req:Request,
@@ -32,7 +32,7 @@ export async function login(
         }
 
         const authenticator = new Authenticator()
-        const token = authenticator.generate({id: user.getId(), role: user.getRole()})
+        const token = authenticator.generate({id: user.getId()})
 
         res.status(200).send({message:'Usuário Logado com Sucesso!!', token})
 
