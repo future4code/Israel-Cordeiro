@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 
 const TrackCardContainer = styled.div`
-    margin: 20px;
-    margin-bottom: 40px;
+ 
+    margin-top: 100px;
     display:flex;
     align-items: center;
     flex-direction: column;
@@ -38,14 +38,14 @@ const DeleteButton = styled.p`
             <div>
                <TrackContainer>{props.musicaNome} - </TrackContainer>
                <ArtistContainer>{props.artista}</ArtistContainer>
-                <DeleteButton>X</DeleteButton>
+                <DeleteButton onClick={() => props.deletarFaixas(props.trackId)}>X</DeleteButton>
             </div>
-            <audio controls="controls"/>
-                <source src={props.url} type="audio/ogg" />
-
+            <audio controls><source src={props.url} type="audio/mpeg"/></audio>
             </TrackCardContainer>
        )
    }
 
 
 export default TrackCard
+
+{/* <audio controls><source src={track.url} type="audio/mpeg" /></audio> */}

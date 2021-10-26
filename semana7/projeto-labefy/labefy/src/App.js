@@ -8,7 +8,6 @@ import PaginaFormularioPlaylist from './components/PaginaFormularioPlaylist/inde
 const AppContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  background: pink;
   display: flex;
   flex-direction: column;
  

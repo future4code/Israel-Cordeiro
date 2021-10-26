@@ -5,11 +5,27 @@ import { axiosConfig, baseURL } from '../../constantes';
 
 
 const PLaylistCreatFormContainer  = styled.div`
-    height: 500px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 20px;
+    border: 2px solid black;
+    width: 500px;
+    margin-left:350px;
+    background-image: linear-gradient(to right, #E6E6FA, #F0FFFF, #FFDAB9); 
 
+    button{
+        cursor:pointer;
+        border-radius:5px;
+        background-color: #EEE5DE;
+        color:#A0522D;
+
+    }
+
+    input{
+        border-radius:5px;
+    }
 
 ` 
 const PlaylistCreatForm = styled.form`
@@ -18,7 +34,8 @@ const PlaylistCreatForm = styled.form`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-
+    
+    
 ` 
 
   class PaginaFormularioPlaylist extends React.Component {
@@ -48,7 +65,7 @@ const PlaylistCreatForm = styled.form`
        render(){
         return(
             <PLaylistCreatFormContainer>
-                <h1>Cadastrar Nova Playlist</h1>
+                <h1>Nova Playlist</h1>
                 <PlaylistCreatForm onSubmit={this.creatPlaylist}>
                  <label> Nova Playlist</label>
                  <input 

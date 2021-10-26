@@ -5,6 +5,16 @@ import Playlists from '../Playlists'
 
 
 const PlaylistManagerPageContainer = styled.div`
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    border: 2px solid black;
+    width: 500px;
+    margin-left:350px;
+    background-image: linear-gradient(to right, #E6E6FA, #F0FFFF, #FFDAB9); 
+    overflow:auto;
 
 
 ` 
@@ -35,6 +45,7 @@ const PlaylistManagerPageContainer = styled.div`
                 }else if(this.state.paginaAtual === "detalhePlaylist"){
                     return  <DetalhePlaylist 
                     mudaPagina={this.mudaPagina}
+                    playlistId={this.state.playlistId}
                     />
                 } 
             }

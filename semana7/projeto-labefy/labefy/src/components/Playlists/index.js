@@ -33,6 +33,7 @@ const PlaylistContainer = styled.div`
       deletarPlaylist = (playlistId) =>{
           axios.delete(`${baseURL}/${playlistId}`, axiosConfig).then(response =>{
               this.buscaPlaylists()
+              alert('Playlist Deletada com Sucesso!!')
           }).catch(err =>{
               console.log(err)
           })
