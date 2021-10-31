@@ -1,0 +1,31 @@
+POST http://localhost:3308/users
+Content-Type: application/json
+
+{
+    "name":"mileidy",
+    "email":"mileidy@hotmail.com",
+    "age":29
+}
+
+###
+
+
+GET http://localhost:3308/users
+Content-Type: application/json
+
+
+### 
+
+POST http://localhost:3308/product
+Content-Type: application/json
+
+{
+    "name": "produto3",
+    "description": "sou um produto3",
+    "price": 300
+}
+
+### 
+
+GET http://localhost:3308/product
+Content-Type: application/json
