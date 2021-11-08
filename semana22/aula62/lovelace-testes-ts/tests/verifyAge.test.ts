@@ -5,8 +5,8 @@ describe('Testando função verifyAge', () => {
     test('Exercício 4, Letra A - Usuário Brasileiro que entra em cassino Brasileiro', () => {
 
         const user: User = {
-            name: 'Caique',
-            age: 27,
+            name: 'Israel',
+            age: 28,
             nationality: NATIONALITY.BRAZILIAN
         }
 
