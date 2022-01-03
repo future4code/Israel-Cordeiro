@@ -1,11 +1,11 @@
-import Bottom from "../../Components/Bottom";
+import Buttom from "../../Components/Buttom";
 
 function TimeMania (){
     return(
         <div>
 
         <h1>Time Mania</h1>
-        <Bottom />
+        <Buttom />
 
      </div>
     )

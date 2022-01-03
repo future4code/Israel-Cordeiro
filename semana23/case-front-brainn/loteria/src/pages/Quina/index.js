@@ -1,4 +1,4 @@
-import Bottom from "../../Components/Bottom";
+import Buttom from "../../Components/Buttom";
 
 
 function Quina(){
@@ -6,7 +6,7 @@ function Quina(){
         <div>
 
         <h1>Quina</h1>
-        <Bottom />
+        <Buttom />
 
      </div>
       

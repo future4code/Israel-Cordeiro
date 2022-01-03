@@ -1,4 +1,4 @@
-import Bottom from "../../Components/Bottom";
+import Buttom from "../../Components/Buttom";
 
 
 function LotoMania (){
@@ -6,7 +6,7 @@ function LotoMania (){
         <div>
 
         <h1>Loto Mania</h1>
-        <Bottom />
+        <Buttom />
 
      </div>
     )
