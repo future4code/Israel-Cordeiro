@@ -10,6 +10,12 @@ export const ContainerGeneral = styled.div`
         margin-top: 30%;
     }
 
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+        display:flex;
+       flex-direction: column;
+
+    }
+
 `
 
 export const ContainerGreen = styled.div`
@@ -17,10 +23,17 @@ export const ContainerGreen = styled.div`
     background-color: #6BEFA3;
     width: 50vw;
     height: 100vh;
-
+   
     
     h1{
         color: white;
+    }
+
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+        width: 100vw;
+       height: 50vh;
+       align-items: center;
+ 
     }
 
 `
@@ -30,21 +43,187 @@ background: lightgrey;
 width: 50vw;
 height: 100vh;
 
+p{
+    margin-top: 0px;
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 480px){
+
+       width: 100vw;
+       height: 50vh;
+       flex: 0.6;
+       margin-right: 1.5em;
+  
+    }
+
 `
 
 export const ContainerNumber = styled.div` 
 
 display: flex;
 flex-direction: row;
+margin-top: 30%;
 
+
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+}
+
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+
+    margin-top: 20%;
+    align-items: center;
+       
+        ul{
+        display:flex;
+        flex-direction: column;
+        width: 10vw;
+        height: 5vh;
+
+        }
+        
+    }
+
+`
+
+export const ContainerInfos = styled.div`
+     position: absolute;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    left: 6.0%;
+    top: 35%;
+
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+        flex-direction: column;
+        top: unset;
+        left: unset;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+
+`
+
+
+
+export const ContainerName = styled.div`
+
+    display: flex;
+    flex-direction: row;
+   
+    
+    p{
+        font-family: Montserrat;
+        color: #fff;
+        font-size: 1.7rem;
+        font-weight: 600;
+        padding: 0 0.8em;
+
+    }
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+
+
+
+        p{
+            font-size: 20px;
+            margin-top:-150%;
+           
+        }
+
+    }
+   
+
+`
+
+export const LogoLoterias = styled.img`
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  background-color: #6BEFA3;
+
+
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+      width: 30px;
+      margin-bottom:70%;
+  }
+`
+
+export const ContainerTitle = styled.div`
+
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  left: 6.0%;
+  bottom: 12%;
 
 p{
-    width: 5vw;
-    height: 8vh;
-    background-color: white;
-    border-radius: 100%;
-    text-align: center;
-    margin-left: 3%;
+    font-family: Montserrat;
+    color: #fff;
+    font-size: 1.0rem;
+    font-weight: 600;
+    padding: 0 0.8em;
+
 }
+
+@media screen and (min-device-width: 320px) and (max-device-width: 480px){
+    top:0%;
+    font-size: 10px;
+    margin-left: 29%;
+}
+
+`
+
+export const ContainerData = styled.div`
+
+position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  left: 6.0%;
+  bottom: 7%;
+  color: #fff;
+  font-size: 1.0rem;
+  font-weight: 600;
+
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+    display: flex;
+    top:0%;
+    font-size: 10px;
+   margin-left: 30%;
+}
+
+
+`
+
+export const ContainerDescription = styled.div`
+
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  margin-top: 160px;
+  color: #595959;
+
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+      font-size: 7px;
+      margin: 16%;
+  }
+
+ 
+
 
 `
